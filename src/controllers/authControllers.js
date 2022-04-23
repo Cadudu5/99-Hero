@@ -36,15 +36,15 @@ router.post("/", async (req, res) =>{
         if(disasters != "bank robs" && disasters != "giant monsters" && disasters != "natural disasters" && disasters != null){
             return res.status(400).send({message: "This area is not couvered by our association! :("})
         }
-
+        // verifica se o campo city eh nulo
         if(city == null ){
             return res.status(400).send({message: "Location necessary to register!"})
         }
-
+        // verifica se o campo disasters eh nulo
         if(disasters == null ){
             return res.status(400).send({message: "You must be at least in one  of our actuation areas"})
         }
-
+        // verifica se o campo realName eh nulo
         if(realName == null){
             return res.status(400).send({message: "We need to know your real identity for this job!"})
         }
